@@ -7,12 +7,10 @@ class User(models.Model):
     firstname = models.CharField(max_length=255, default='')
     familyname = models.CharField(max_length=255, default='')
     image_url = models.CharField(max_length=2083, default='')
-    # following users
 
 
 class ImageBoard(models.Model):
     userID = models.IntegerField()
-    # list of images
     title = models.CharField(max_length=255, default='')
 
 
@@ -36,3 +34,8 @@ class Comment(models.Model):
     text = models.TextField()
     imageID = models.IntegerField()
     userID = models.IntegerField()
+
+
+class AssignedImagesToBoard(models.Model):
+    imageID = models.IntegerField()
+    boardID = models.IntegerField()
